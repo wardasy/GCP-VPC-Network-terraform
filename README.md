@@ -8,7 +8,7 @@
 ## 🎨 Diagram Workflow
 
 <p align="center">
-![t-lab](https://user-images.githubusercontent.com/34807213/158074032-9b97d913-82a5-4462-9e2c-1d7dad5481a2.png)
+<img width="813" alt="signup" src="https://user-images.githubusercontent.com/34807213/158074103-0b04bbcc-e14c-41df-8047-4bf0760bba8b.png">
 </p>
 
 ## 💻 Features for Google cloud (GCP) 
