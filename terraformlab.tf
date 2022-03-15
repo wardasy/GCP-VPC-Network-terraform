@@ -56,7 +56,7 @@ network = google_compute_network.dev-vpc-ws.id
 resource "google_compute_subnetwork" "ws-dev-subnet-2" {
 name = "ws-dev-subnet-2"
 ip_cidr_range = "10.0.2.0/24"
-region = "us-west2"
+region = "europe-west2"
 network = google_compute_network.dev-vpc-ws.id
 }
 //dev-webserver-1
@@ -153,7 +153,7 @@ resource "google_compute_network" "prod-vpc-ws" {
 resource "google_compute_subnetwork" "ws-prod-subnet-1" {
 name = "ws-prod-subnet-1"
 ip_cidr_range = "192.168.1.0/24"
-region = "europe-west2"
+region = "us-west2"
 network = google_compute_network.prod-vpc-ws.id
 }
 //prod-subnet-2
@@ -167,7 +167,7 @@ network = google_compute_network.prod-vpc-ws.id
 resource "google_compute_instance" "prod-webserver1-ws" {
   name         = "prod-webserver1-ws"
   machine_type = "e2-medium"
-  zone         = "europe-west2-b"
+  zone         = "us-west2-b"
   boot_disk {
     initialize_params {
       image = "debian-cloud/debian-9"
@@ -181,7 +181,7 @@ resource "google_compute_instance" "prod-webserver1-ws" {
 resource "google_compute_instance" "prod-webserver2-ws" {
   name         = "prod-webserver2"
   machine_type = "e2-medium"
-  zone         = "europe-west2-c"
+  zone         = "us-west2-c"
   boot_disk {
     initialize_params {
       image = "debian-cloud/debian-9"
@@ -201,14 +201,14 @@ resource "google_compute_instance_group" "instance-group-prod-ws" {
     google_compute_instance.prod-webserver1-ws.id,
     google_compute_instance.prod-webserver2-ws.id,
   ]
-  zone = "europe-west2"
+  zone = "us-west2"
 }
 
 //prod-sqlserver-1
 resource "google_compute_instance" "prod-sqlserver1-ws" {
   name         = "prod-sqlserver1-ws"
   machine_type = "e2-medium"
-  zone         = "europe-west2-b"
+  zone         = "us-west2-b"
   boot_disk {
     initialize_params {
       image = "windows-sql-cloud/sql-ent-2012-win-2012-r2"
@@ -223,7 +223,7 @@ resource "google_compute_instance" "prod-sqlserver1-ws" {
 resource "google_compute_instance" "prod-sqlserver2-ws" {
   name         = "prod-sqlserver2-ws"
   machine_type = "e2-medium"
-  zone         = "europe-west2-c"
+  zone         = "us-west2-c"
   boot_disk {
     initialize_params {
       image = "windows-sql-cloud/sql-ent-2012-win-2012-r2"
